@@ -115,6 +115,7 @@ AnythingLLM は複数ユーザーもサポートしており、インスタン�
 - [Lemonade by AMD](https://lemonade-server.ai)
 - [Minimax](https://platform.minimax.io)
 - [Cerebras (chat models)](https://www.cerebras.ai/)
+- [Runware (chat models)](https://runware.ai/)
 - [oMLX](https://github.com/jundot/omlx)
 
 **埋め込みモデル：**

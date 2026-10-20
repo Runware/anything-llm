@@ -37,6 +37,7 @@ import LemonadeLogo from "@/media/llmprovider/lemonade.png";
 import OMLXLogo from "@/media/llmprovider/omlx.png";
 import MinimaxLogo from "@/media/llmprovider/minimax.png";
 import CerebrasLogo from "@/media/llmprovider/cerebras.png";
+import RunwareLogo from "@/media/llmprovider/runware.svg";
 
 import OpenAiOptions from "@/components/LLMSelection/OpenAiOptions";
 import GenericOpenAiOptions from "@/components/LLMSelection/GenericOpenAiOptions";
@@ -76,6 +77,7 @@ import { withEmbeddedLemonade } from "@/components/LLMSelection/EmbeddedLemonade
 import OMLXOptions from "@/components/LLMSelection/OMLXOptions";
 import MinimaxOptions from "@/components/LLMSelection/MinimaxOptions";
 import CerebrasLLMOptions from "@/components/LLMSelection/CerebrasLLMOptions";
+import RunwareOptions from "@/components/LLMSelection/RunwareOptions";
 
 import LLMItem from "@/components/LLMSelection/LLMItem";
 import System from "@/models/system";
@@ -352,6 +354,13 @@ const LLMS = [
     logo: CerebrasLogo,
     options: (settings) => <CerebrasLLMOptions settings={settings} />,
     description: "Run models at instant speed on Cerebras inference.",
+  },
+  {
+    name: "Runware",
+    value: "runware",
+    logo: RunwareLogo,
+    options: (settings) => <RunwareOptions settings={settings} />,
+    description: "Run any model through Runware's unified inference API.",
   },
 ];
 

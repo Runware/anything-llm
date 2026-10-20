@@ -115,6 +115,7 @@ AnythingLLM ayrıca birden fazla kullanıcıyı destekler; örneğin güvenliği
 - [Lemonade by AMD](https://lemonade-server.ai)
 - [Minimax](https://platform.minimax.io)
 - [Cerebras (chat models)](https://www.cerebras.ai/)
+- [Runware (chat models)](https://runware.ai/)
 - [oMLX](https://github.com/jundot/omlx)
 
 **Embedder modelleri:**

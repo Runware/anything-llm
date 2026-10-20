@@ -484,6 +484,15 @@ class Provider {
           apiKey: process.env.CEREBRAS_API_KEY || null,
           ...config,
         });
+      case "runware":
+        return new ChatOpenAI({
+          configuration: {
+            baseURL:
+              process.env.RUNWARE_BASE_URL || "https://api.runware.ai/v1",
+          },
+          apiKey: process.env.RUNWARE_API_KEY || null,
+          ...config,
+        });
       // OSS Model Runners
       // case "anythingllm_ollama":
       //   return new ChatOllama({

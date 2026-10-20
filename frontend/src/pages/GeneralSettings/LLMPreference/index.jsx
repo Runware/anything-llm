@@ -42,6 +42,7 @@ import SambaNovaLogo from "@/media/llmprovider/sambanova.png";
 import LemonadeLogo from "@/media/llmprovider/lemonade.png";
 import MinimaxLogo from "@/media/llmprovider/minimax.png";
 import CerebrasLogo from "@/media/llmprovider/cerebras.png";
+import RunwareLogo from "@/media/llmprovider/runware.svg";
 import OMLXLogo from "@/media/llmprovider/omlx.png";
 
 import PreLoader from "@/components/Preloader";
@@ -84,6 +85,7 @@ import LemonadeOptions from "@/components/LLMSelection/LemonadeOptions";
 import { withEmbeddedLemonade } from "@/components/LLMSelection/EmbeddedLemonadeOptions";
 import MinimaxOptions from "@/components/LLMSelection/MinimaxOptions";
 import CerebrasLLMOptions from "@/components/LLMSelection/CerebrasLLMOptions";
+import RunwareOptions from "@/components/LLMSelection/RunwareOptions";
 
 import LLMItem from "@/components/LLMSelection/LLMItem";
 import CTAButton from "@/components/lib/CTAButton";
@@ -414,6 +416,14 @@ export const AVAILABLE_LLM_PROVIDERS = [
     options: (settings) => <CerebrasLLMOptions settings={settings} />,
     description: "Run models at instant speed on Cerebras inference.",
     requiredConfig: ["CerebrasApiKey"],
+  },
+  {
+    name: "Runware",
+    value: "runware",
+    logo: RunwareLogo,
+    options: (settings) => <RunwareOptions settings={settings} />,
+    description: "Run any model through Runware's unified inference API.",
+    requiredConfig: ["RunwareApiKey"],
   },
   {
     name: "oMLX",

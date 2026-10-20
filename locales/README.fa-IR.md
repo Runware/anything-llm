@@ -121,6 +121,7 @@ AnythingLLM همچنین از چندین کاربر پشتیبانی می‌کن
 - [Lemonade by AMD](https://lemonade-server.ai)
 - [Minimax](https://platform.minimax.io)
 - [Cerebras (chat models)](https://www.cerebras.ai/)
+- [Runware (chat models)](https://runware.ai/)
 - [oMLX](https://github.com/jundot/omlx)
 
 **مدل‌های Embedder:**
