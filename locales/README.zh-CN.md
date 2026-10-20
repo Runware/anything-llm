@@ -115,6 +115,7 @@ AnythingLLM 还支持多用户，您可以控制每个用户的访问权限和�
 - [Lemonade by AMD](https://lemonade-server.ai)
 - [Minimax](https://platform.minimax.io)
 - [Cerebras (chat models)](https://www.cerebras.ai/)
+- [Runware (chat models)](https://runware.ai/)
 - [oMLX](https://github.com/jundot/omlx)
 
 **嵌入模型：**

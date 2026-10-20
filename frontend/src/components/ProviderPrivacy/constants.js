@@ -47,6 +47,7 @@ import LemonadeLogo from "@/media/llmprovider/lemonade.png";
 import OMLXLogo from "@/media/llmprovider/omlx.png";
 import MinimaxLogo from "@/media/llmprovider/minimax.png";
 import CerebrasLogo from "@/media/llmprovider/cerebras.png";
+import RunwareLogo from "@/media/llmprovider/runware.svg";
 
 const LLM_PROVIDER_PRIVACY_MAP = {
   openai: {
@@ -271,6 +272,11 @@ const LLM_PROVIDER_PRIVACY_MAP = {
     name: "Cerebras",
     policyUrl: "https://www.cerebras.ai/privacy-policy",
     logo: CerebrasLogo,
+  },
+  runware: {
+    name: "Runware",
+    policyUrl: "https://runware.ai/privacy-policy",
+    logo: RunwareLogo,
   },
 };
 

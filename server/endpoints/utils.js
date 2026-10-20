@@ -248,6 +248,9 @@ function getModelTag() {
     case "cerebras":
       model = process.env.CEREBRAS_MODEL_PREF;
       break;
+    case "runware":
+      model = process.env.RUNWARE_MODEL_PREF;
+      break;
     case "omlx":
       model = process.env.OMLX_LLM_MODEL_PREF;
       break;

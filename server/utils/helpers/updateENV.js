@@ -861,6 +861,16 @@ const KEY_MAPPING = {
     checks: [isNotEmpty],
   },
 
+  // Runware Options
+  RunwareApiKey: {
+    envKey: "RUNWARE_API_KEY",
+    checks: [isNotEmpty],
+  },
+  RunwareModelPref: {
+    envKey: "RUNWARE_MODEL_PREF",
+    checks: [isNotEmpty],
+  },
+
   // Google Vertex AI Options
   VertexAiLLMApiKey: {
     envKey: "VERTEX_AI_LLM_API_KEY",
@@ -1259,6 +1269,7 @@ function supportedLLM(input = "") {
     ...require("../AiProviders/embeddedLemonade/config").supportedProviders(),
     "minimax",
     "cerebras",
+    "runware",
     "omlx",
     "anythingllm-router",
     "vertex",

@@ -48,6 +48,7 @@ const ENABLED_PROVIDERS = [
   "omlx",
   "minimax",
   "cerebras",
+  "runware",
 ];
 const WARN_PERFORMANCE = [
   "lmstudio",

@@ -35,6 +35,7 @@ const LemonadeProvider = require("./lemonade.js");
 const OMLXProvider = require("./omlx.js");
 const MinimaxProvider = require("./minimax.js");
 const CerebrasProvider = require("./cerebras.js");
+const RunwareProvider = require("./runware.js");
 const VertexProvider = require("./vertex.js");
 
 module.exports = {
@@ -75,5 +76,6 @@ module.exports = {
   OMLXProvider,
   MinimaxProvider,
   CerebrasProvider,
+  RunwareProvider,
   VertexProvider,
 };

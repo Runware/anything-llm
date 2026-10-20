@@ -1584,6 +1584,8 @@ https://docs.anythingllm.com/agent/intelligent-tool-selection
         return new Providers.MinimaxProvider({ model: config.model });
       case "cerebras":
         return new Providers.CerebrasProvider({ model: config.model });
+      case "runware":
+        return new Providers.RunwareProvider({ model: config.model });
       case "vertex":
         return new Providers.VertexProvider({ model: config.model });
       default:

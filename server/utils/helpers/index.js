@@ -290,6 +290,9 @@ function getLLMProviderConnector({ provider = null, model = null } = {}) {
     case "cerebras":
       const { CerebrasLLM } = require("../AiProviders/cerebras");
       return new CerebrasLLM(embedder, model);
+    case "runware":
+      const { RunwareLLM } = require("../AiProviders/runware");
+      return new RunwareLLM(embedder, model);
     case "vertex":
       const { VertexLLM } = require("../AiProviders/vertex");
       return new VertexLLM(embedder, model);
@@ -526,6 +529,9 @@ function getLLMProviderClass({ provider = null } = {}) {
     case "cerebras":
       const { CerebrasLLM } = require("../AiProviders/cerebras");
       return CerebrasLLM;
+    case "runware":
+      const { RunwareLLM } = require("../AiProviders/runware");
+      return RunwareLLM;
     case "vertex":
       const { VertexLLM } = require("../AiProviders/vertex");
       return VertexLLM;
@@ -620,6 +626,8 @@ function getBaseLLMProviderModel({ provider = null } = {}) {
       return process.env.MINIMAX_MODEL_PREF;
     case "cerebras":
       return process.env.CEREBRAS_MODEL_PREF;
+    case "runware":
+      return process.env.RUNWARE_MODEL_PREF;
     case "vertex":
       return process.env.VERTEX_AI_LLM_MODEL_PREF;
     default:

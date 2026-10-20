@@ -1079,6 +1079,10 @@ const SystemSettings = {
       CerebrasApiKey: !!process.env.CEREBRAS_API_KEY,
       CerebrasModelPref: process.env.CEREBRAS_MODEL_PREF,
 
+      // Runware Keys
+      RunwareApiKey: !!process.env.RUNWARE_API_KEY,
+      RunwareModelPref: process.env.RUNWARE_MODEL_PREF,
+
       // Google Vertex AI Keys
       VertexAiLLMApiKey: !!process.env.VERTEX_AI_LLM_API_KEY,
       VertexAiLLMProjectId: process.env.VERTEX_AI_LLM_PROJECT_ID,

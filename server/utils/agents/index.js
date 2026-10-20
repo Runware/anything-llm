@@ -302,6 +302,10 @@ class AgentHandler {
         if (!process.env.CEREBRAS_API_KEY)
           throw new Error("Cerebras API key must be provided to use agents.");
         break;
+      case "runware":
+        if (!process.env.RUNWARE_API_KEY)
+          throw new Error("Runware API key must be provided to use agents.");
+        break;
       case "vertex":
         if (
           !process.env.VERTEX_AI_LLM_API_KEY ||
@@ -407,6 +411,8 @@ class AgentHandler {
         return process.env.MINIMAX_MODEL_PREF ?? "MiniMax-M2.7";
       case "cerebras":
         return process.env.CEREBRAS_MODEL_PREF ?? "gpt-oss-120b";
+      case "runware":
+        return process.env.RUNWARE_MODEL_PREF ?? "openai-gpt-5-mini";
       case "vertex":
         return process.env.VERTEX_AI_LLM_MODEL_PREF ?? "gemini-2.5-flash";
       default:

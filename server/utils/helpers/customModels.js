@@ -50,6 +50,7 @@ const SUPPORT_CUSTOM_MODELS = [
   "embedded_lemonade-all",
   "minimax",
   "cerebras",
+  "runware",
   "omlx",
   "bedrock",
   "generic-openai",
@@ -192,6 +193,8 @@ async function getCustomModels(
       return await getMinimaxModels(apiKey);
     case "cerebras":
       return await getCerebrasModels();
+    case "runware":
+      return await getRunwareModels(apiKey);
     case "bedrock":
       return await getBedrockModels(apiKey, options);
     case "vertex":
@@ -1278,6 +1281,40 @@ async function getSambaNovaModels(_apiKey = null) {
     console.error(`SambaNova:getSambaNovaModels`, e.message);
     return { models: [], error: "Could not fetch SambaNova Models" };
   }
+}
+
+/**
+ * Use the Runware OpenAI-compatible API to fetch the available models.
+ * @returns {Promise<{models: Array<{id: string, organization: string, name: string}>, error: string | null}>}
+ */
+async function getRunwareModels(_apiKey = null) {
+  const { OpenAI: OpenAIApi } = require("openai");
+  const apiKey =
+    _apiKey === true
+      ? process.env.RUNWARE_API_KEY
+      : _apiKey || process.env.RUNWARE_API_KEY || null;
+  const openai = new OpenAIApi({
+    baseURL: process.env.RUNWARE_BASE_URL || "https://api.runware.ai/v1",
+    apiKey,
+  });
+  const models = await openai.models
+    .list()
+    .then((results) => results.data)
+    .then((models) =>
+      models.map((model) => ({
+        id: model.id,
+        name: model.name || model.id,
+        organization: model.owned_by || "runware",
+      }))
+    )
+    .catch((e) => {
+      console.error(`Runware:listModels`, e.message);
+      return [];
+    });
+
+  // Api Key was successful so lets save it for future uses
+  if (models.length > 0 && !!apiKey) process.env.RUNWARE_API_KEY = apiKey;
+  return { models, error: null };
 }
 
 /**
